@@ -32,6 +32,16 @@ class Dados{
         $this->db->delete('lp2_empresa', "id = $id");
     }
 
+    public function update($data, $id){
+        $this->db->update('lp2_empresa', $data, "id = $id");
+        return $this->db->affected_rows();
+    }
+
+    public function getById($id){
+        $rs = $this->db->get_where('lp2_empresa', "id = $id");
+       return $rs->row_array();
+    }
+
 
 
 }

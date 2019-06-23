@@ -18,7 +18,9 @@ class DadosModel extends CI_Model{
             $file_data = $this->upload->data();
             $dados = new Dados($nome, $descricao, $file_data['file_name']);
             $dados->save();
+            redirect('template/listar');
         }
+        
 
     }
 
@@ -48,19 +50,19 @@ class DadosModel extends CI_Model{
 
         }
         
-        /*public function carrega_livro($id){
-            $livro = new Livro();
-            return $livro->getById($id);
+        public function carrega_dados($id){
+            $dados = new Dados();
+            return $dados->getById($id);
         }
 
         public function atualizar($id){
             if(sizeof($_POST) == 0) return;
     
             $data = $this->input->post();
-            $livro = new Livro();
-            if($livro->update($data, $id))
-                redirect('setup/modifica');    
-        }*/
+            $dados = new Dados();
+            if($dados->update($data, $id))
+                redirect('template/listar');    
+        }
 
         public function delete($id){
             $dados = new Dados();

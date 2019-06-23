@@ -13,7 +13,6 @@ class Template extends MY_Controller{
         $this->load->view("navbar");
         $this->model->salvar();
         $this->load->view("form");
-        print_r($_POST);
         $this->load->view("footer");
     }
 
@@ -31,8 +30,13 @@ class Template extends MY_Controller{
     }
 
     public function edit($id){
-        $this->model->delete($id);
-        redirect('template/listar');
+        $this->load->view("header");
+        $this->load->view("navbar");
+        $this->model->atualizar($id);
+        $v['dados'] = $this->model->carrega_dados($id);
+        $this->load->view("form", $v);
+        $this->load->view("footer");
+       
     }
 
 }
