@@ -22,6 +22,16 @@ class Dados{
         $this->db->query($sql);
     }
 
+    public function getALL(){
+        $sql = "SELECT * FROM lp2_empresa";
+        $res = $this->db->query($sql);
+        return $res->result_array();
+     }
+
+     public function delete($id){
+        $this->db->delete('lp2_empresa', "id = $id");
+    }
+
 
 
 }

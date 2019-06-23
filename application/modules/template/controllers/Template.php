@@ -20,8 +20,19 @@ class Template extends MY_Controller{
     public function listar(){
         $this->load->view("header");
         $this->load->view("navbar");
-        
+        $v['editar'] = $this->model->lista_editar();
+        $this->load->view("listar_view", $v);
         $this->load->view("footer");
+    }
+
+    public function delete($id){
+        $this->model->delete($id);
+        redirect('template/listar');
+    }
+
+    public function edit($id){
+        $this->model->delete($id);
+        redirect('template/listar');
     }
 
 }
