@@ -1,5 +1,5 @@
 <?php
-include_once APPPATH.'modules\template\libraries\Dados.php';
+include_once APPPATH.'modules\instalacoes\libraries\Dados.php';
 class DadosModel extends CI_Model{
 
     public function salvar(){
@@ -18,7 +18,7 @@ class DadosModel extends CI_Model{
             $file_data = $this->upload->data();
             $dados = new Dados($nome, $descricao, $file_data['file_name']);
             $dados->save();
-            redirect('template/listar');
+            redirect('instalacoes/listar');
         }
         
 
@@ -44,8 +44,8 @@ class DadosModel extends CI_Model{
 
         private function icones($id){
             $html = '';
-            $html .= '<a href="'.base_url('template/edit/'.$id).'"><i class="far fa-edit mr-3 text-primary"></i></a>';
-            $html .= '<a href="'.base_url('template/delete/'.$id).'"><i class="far fa-trash-alt text-danger"></i></a>';
+            $html .= '<a href="'.base_url('instalacoes/edit/'.$id).'"><i class="far fa-edit mr-3 text-primary"></i></a>';
+            $html .= '<a href="'.base_url('instalacoes/delete/'.$id).'"><i class="far fa-trash-alt text-danger"></i></a>';
             return $html;
 
         }
@@ -61,7 +61,7 @@ class DadosModel extends CI_Model{
             $data = $this->input->post();
             $dados = new Dados();
             if($dados->update($data, $id))
-                redirect('template/listar');    
+                redirect('instalacoes/listar');    
         }
 
         public function delete($id){

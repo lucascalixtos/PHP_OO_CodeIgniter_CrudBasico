@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-class Template extends MY_Controller{
+class Instalacoes extends MY_Controller{
 
     public function __construct(){
         $this->load->model('DadosModel', 'model');
@@ -26,7 +26,7 @@ class Template extends MY_Controller{
 
     public function delete($id){
         $this->model->delete($id);
-        redirect('template/listar');
+        redirect('instalacoes/listar');
     }
 
     public function edit($id){

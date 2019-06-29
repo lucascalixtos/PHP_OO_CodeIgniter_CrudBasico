@@ -6,10 +6,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-               <a class="nav-link waves-effect waves-light" href="<?php echo base_url('template') ?>">Cadastrar <span class="sr-only">(current)</span></a>
+               <a class="nav-link waves-effect waves-light" href="<?php echo base_url('instalacoes') ?>">Cadastrar <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-effect waves-light" href="<?php echo base_url('template/listar') ?>">Listar</a>
+                <a class="nav-link waves-effect waves-light" href="<?php echo base_url('instalacoes/listar') ?>">Listar</a>
             </li>
     </div>
 </nav>
